@@ -1,5 +1,5 @@
 <div class="card">
     <div class="card__plan card__item">Plano {{cardPlanType}} </div>
     <div class="card__price card__item">R${{cardPlanPrice}},00/Mês</div>
-    <app-card-button></app-card-button>
+    <app-card-button (buttonCick)="buttonClicked($event)"></app-card-button>
 </div>

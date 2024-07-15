@@ -1,7 +1,14 @@
 <div class="cards-container">
   <app-card [planPriceAlias]=100
-            [planTypeAlias]="cardPlan1"></app-card>
+            [planTypeAlias]="cardPlanType"></app-card>
 
   <app-card-roxo></app-card-roxo>
 </div>
+<br>
+<input
+  #meuInput
+  type="text" 
+  class="meuInput"
+  (keyup)="handlePlanType(meuInput.value)"
+  placeholder="Digite o plano">
  

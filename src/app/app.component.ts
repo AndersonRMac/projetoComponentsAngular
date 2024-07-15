@@ -6,8 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-cardPlan1 = 'Simples'
-cardPlan2 = 'Completo'
+cardPlanType = '';
 cardPlanPrice = 150
+
+handlePlanType(text: string){
+this.cardPlanType = text;
+}
    
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +6,12 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
+
 @Input('planTypeAlias')cardPlanType: string = '';
 @Input({required:true, alias: 'planPriceAlias'})cardPlanPrice: number = 0;
+
+buttonClicked(valueEmitted:string) {
+  console.log('Click do componente pai', valueEmitted);
+}
+
 }
