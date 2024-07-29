@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, numberAttribute } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,21 +7,11 @@ import { Component, Input, Output } from '@angular/core';
 })
 export class CardComponent {
 
+  
   private _planType: string = '';
 
-@Input('planType') 
-set cardPlanType(value:string){
-  this._planType = value.toUpperCase();
-}
-
-get planType():string{
-  return this._planType;
-}
-
-
-
-@Input({required:true, alias: 'planPriceAlias'})cardPlanPrice: number = 0;
-
+@Input({required:true, alias: 'planPriceAlias', transform: numberAttribute})cardPlanPrice: number = 0;
+@Input({alias:'planType', transform: (value:string) => value.toUpperCase()}) planType: string ='';
 
 
 
